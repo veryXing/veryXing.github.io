@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://veryxing.github.io/tags/index.html</loc>
+    <loc>https://veryxing.github.io/2018/10/23/PyQt5%E7%AA%97%E5%8F%A3%E8%B7%9F%E9%9A%8F%E5%85%B6%E5%AE%83%E7%AA%97%E5%8F%A3/</loc>
     
     <lastmod>2024-10-13</lastmod>
     
@@ -12,6 +12,15 @@
   
   <url>
     <loc>https://veryxing.github.io/link/index.html</loc>
+    
+    <lastmod>2024-10-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://veryxing.github.io/tags/index.html</loc>
     
     <lastmod>2024-10-13</lastmod>
     
@@ -46,6 +55,27 @@
   </url>
 
   
+  <url>
+    <loc>https://veryxing.github.io/tags/PyQt/</loc>
+    <lastmod>2024-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://veryxing.github.io/tags/%E7%AA%97%E5%8F%A3/</loc>
+    <lastmod>2024-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://veryxing.github.io/categories/%E4%BE%8B%E5%AD%90/</loc>
+    <lastmod>2024-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>
