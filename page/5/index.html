@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Xing's Blog</title><meta name="author" content="xing"><meta name="copyright" content="xing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Xing&#39;s Blog">
+<meta property="og:url" content="https://veryxing.github.io/page/5/index.html">
+<meta property="og:site_name" content="Xing&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://veryxing.github.io/img/butterfly-icon.png">
+<meta property="article:author" content="xing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://veryxing.github.io/img/butterfly-icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://veryxing.github.io/page/5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Xing\'s Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-11-28 02:00:12'
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Xing's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/images/2.gif" data-lazy-src="/img/butterfly-icon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">59</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">55</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-folder-open"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-folder-open"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Xing's Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-folder-open"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-folder-open"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Xing's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/article/4b415978.html" title="在Mac上以正确的姿势使用PyQtClient看Demo"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Mac上以正确的姿势使用PyQtClient看Demo"></a></div><div class="recent-post-info"><a class="article-title" href="/article/4b415978.html" title="在Mac上以正确的姿势使用PyQtClient看Demo">在Mac上以正确的姿势使用PyQtClient看Demo</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-04-02T09:18:43.000Z" title="发表于 2019-04-02 17:18:43">2019-04-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/PyQt/">PyQt</a></span></div><div class="content">由于PyQtClient只提供了Windows的版本，这里记录下编译后在Mac上运行。   下载项目安装git略。没有的东西可以都先去试试brew install xxx。没安装homebrew的建议使用搜索引擎 git clone https://github.com/PyQt5/PyQtClient.git 配置环境 打开IDE配置python环境，使用anaconda比较方便 推荐用pycharm，我是习惯了用idea。anaconda安装可以去官网下载。 环境原因，选择新建一个 python 3.6 p.s. 我取的环境名字就是 3.6 所以后面的3.6其实是这个原因  conda源最好是加环境变量，不加也可以，就是以后用到的都需要指定路径，不太常用，我就没加 12345~/anaconda3/bin/conda config --add channels conda-forge~/anaconda3/bin/conda config --add channels defaults~/anaconda3/bin/conda config --add channels...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/1e5b84cd.html" title="Python调用Java对Excel截图"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python调用Java对Excel截图"></a></div><div class="recent-post-info"><a class="article-title" href="/article/1e5b84cd.html" title="Python调用Java对Excel截图">Python调用Java对Excel截图</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-03-12T13:15:06.000Z" title="发表于 2019-03-12 21:15:06">2019-03-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Python/">Python</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%88%AA%E5%9B%BE/">截图</a></span></div><div class="content">有的时候会遇到一些奇葩的需求，就是用Excel做报表，但是需要对里面的数据进行填充并生成报表图片，发送出去。这里记录用python调用jar包对excel文件进行公式计算和截图，数据填充可以用xlrd或者openpyxl   利用jpype模块初始化java虚拟机加载jar包然后执行其中的功能。 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879#!/usr/bin/env python# -*- coding: utf-8 -*-import osimport jpypedef convertToImage():    Workbook = jpype.JClass(&#x27;com.aspose.cells.Workbook&#x27;)    ImageFormat =...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/article/84a174ee.html" title="FFmpeg合成加密HLS记录"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FFmpeg合成加密HLS记录"></a></div><div class="recent-post-info"><a class="article-title" href="/article/84a174ee.html" title="FFmpeg合成加密HLS记录">FFmpeg合成加密HLS记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-01-12T11:28:06.000Z" title="发表于 2019-01-12 19:28:06">2019-01-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Python/">Python</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/FFmpeg/">FFmpeg</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/HLS/">HLS</a></span></div><div class="content">记录在某个需求中要求截图并合成加密视频文件，这里采用FFmpeg的管道流来实现生成HLS加密文件。   12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#!/usr/bin/env python# -*- coding: utf-8 -*-from pathlib import Pathfrom subprocess import Popen, PIPE# p = Popen([r&#x27;D:\soft\ffmpeg\bin\ffmpeg.exe&#x27;, &#x27;-y&#x27;,#            &#x27;-threads&#x27;, &#x27;2&#x27;,#            &#x27;-f&#x27;, &#x27;image2pipe&#x27;,#            &#x27;-vcodec&#x27;, &#x27;mjpeg&#x27;, &#x27;-r&#x27;,...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/3b824793.html" title="PyQt5编译QWebView与QWebEngineView共存"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyQt5编译QWebView与QWebEngineView共存"></a></div><div class="recent-post-info"><a class="article-title" href="/article/3b824793.html" title="PyQt5编译QWebView与QWebEngineView共存">PyQt5编译QWebView与QWebEngineView共存</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-01-12T11:28:06.000Z" title="发表于 2019-01-12 19:28:06">2019-01-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/PyQt/">PyQt</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/QWebView/">QWebView</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a></span></div><div class="content">在PyQt5.5过后移除了QWebView控件，改用QWebEngineView，但是这个刚开始用起来不是很方便，最近在整理一些例子的时候需要同时使用QWebView和QWebEngineView，故希望把QWebView重新加入到后面的PyQt5版本中，查看PyQt5.10.1的源码发现里面其实是有QWebView的，只是因为Qt5.10.1中没有编译好的dll等导致无法编译。   准备工作 安装VS2015 安装Qt5.10.1 前往 https://github.com/annulen/webkit/releases 下载对应的文件，比如：qtwebkit-5.212.0_alpha2-qt59-msvc2015-x86.zip 下载PyQt5.10.1源码 下载对应版本的sip源码  编译 设置环境变量set PATH=D:\soft\Qt\Qt5.10.1\5.10.1\msvc2015\bin;%PATH% 首先进入vs2015命令行编译sip并安装，python configure.py &amp;&amp; nmake &amp;&amp; nmake...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/article/c054e672.html" title="PyQt5之图片轮播"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyQt5之图片轮播"></a></div><div class="recent-post-info"><a class="article-title" href="/article/c054e672.html" title="PyQt5之图片轮播">PyQt5之图片轮播</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-11-24T13:45:06.000Z" title="发表于 2018-11-24 21:45:06">2018-11-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BE%8B%E5%AD%90/">例子</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/PyQt/">PyQt</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8A%A8%E7%94%BB/">动画</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%BD%AE%E6%92%AD/">轮播</a></span></div><div class="content">之前看到了QStackedWidget做切换动画，让界面不那么生硬，于是参考了 http://qt.shoutwiki.com/wiki/Extending_QStackedWidget_for_sliding_page_animations_in_Qt 做了一个QStackedWidget的切换动画，然后利用QStackedWidget结合多个QLabel显示图片来做一个轮播效果。 其实在写之前也在网上找了很多例子，参看过后发现大多例子都是利用到了paintEvent去绘制，这样其实还是比较麻烦，个人觉得更好的方式是使用QPropertyAnimation属性动画修改控件中QLabel图片控件的pos位置属性就可以达到移动效果了。    比较核心的算法就是要计算当前页面和下一个页面的位置偏移量，比如:  12345678910111213141516171819202122232425# 计算偏移量offsetX = self.frameRect().width()offsetY = self.frameRect().height()w_next.setGeometry(0,...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/4809cb2f.html" title="python 在类里使用进程池"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python 在类里使用进程池"></a></div><div class="recent-post-info"><a class="article-title" href="/article/4809cb2f.html" title="python 在类里使用进程池">python 在类里使用进程池</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-11-16T13:37:31.000Z" title="发表于 2018-11-16 21:37:31">2018-11-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%BF%9B%E7%A8%8B/">进程</a></span></div><div class="content"> 首先， 进程池的作用就是减少进程的创建和释放 开销的， 所以在类中作为局部变量是不合适的;   其次， 进程池必须在if __name__ == &quot;__main__&quot; 里 ，否则会报 frozen_ 什么什么的错误;（这一点可能解释有误）;   然后， 线程池的apply_async中如果传入self.xxx方法，会报multiprocessing.Pool pickling error什么的错误， 具体解释见https://blog.csdn.net/dutsoft/article/details/70336462， 里面有解决方法，但是我没有成功（最开始测试没有现在理解的透彻， 不过应该是可以的）; 由于第1点 不合理， 所以有什么办法在类 函数中获取 进程池对象po的地址：    我的解决思路和方法是:   通过globals() 取得全局变量 ， 测试证明 ：不同文件的globals()是不同的： 如Tab2.py 的 globals() 和 main_extra_func_file.py中的 globals() 是不同的 ， 所以...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/article/a3497f7b.html" title="PyQt5之QSlider滑动条点击定位"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyQt5之QSlider滑动条点击定位"></a></div><div class="recent-post-info"><a class="article-title" href="/article/a3497f7b.html" title="PyQt5之QSlider滑动条点击定位">PyQt5之QSlider滑动条点击定位</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-11-05T15:12:26.000Z" title="发表于 2018-11-05 23:12:26">2018-11-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BE%8B%E5%AD%90/">例子</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/PyQt/">PyQt</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%BB%91%E5%8A%A8%E6%9D%A1/">滑动条</a></span></div><div class="content">QSlider 在通常情况下支持鼠标点击可以任意拖动，或者鼠标点击则往鼠标点击的方向移动一小格，这种移动一小格通常情况下用起来很不方便，比如我要做一个播放器的播放进度条，肯定是点击某个位置就直接跳到该位置，为此需要对 QSlider...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/f1af6d66.html" title="PyQt5仿网页鼠标移动点阵特效"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyQt5仿网页鼠标移动点阵特效"></a></div><div class="recent-post-info"><a class="article-title" href="/article/f1af6d66.html" title="PyQt5仿网页鼠标移动点阵特效">PyQt5仿网页鼠标移动点阵特效</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-10-29T08:49:10.000Z" title="发表于 2018-10-29 16:49:10">2018-10-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BE%8B%E5%AD%90/">例子</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/PyQt/">PyQt</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8A%A8%E7%94%BB/">动画</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%89%B9%E6%95%88/">特效</a></span></div><div class="content">Orz，前段时间有个zz需求，就是要做一个类似网页上很多个多点连线、鼠标移动跟随的那种炫酷特效，然后花了点时间在网上找了js做的，刚开始打算是嵌入QWebView来显示网页，后来研究了下js的算法代码，遂改用QWidget的paintEvent直接绘制。   大概思路 先根据窗口大小随机创建一些点 遍历这些点并找到与之相关联的点 在动画过程中绘制圆点和画两点之间的连线 属性动画QPropertyAnimation改变颜色的透明度  题外 这里没有仔细去研究js里的算法优化,在浏览器里嗖嗖的就生成了,在py里好慢…. 尽量在py里优化了循环操作,也简单的做了个cython加速也才提高了1s ? 1倍?… 不要只是为了好看用这玩意儿,和网页的效果一样,占CPU !!!!!!没有任何意义 如果有更好的优化算法请告知,...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/article/1ed0f370.html" title="QDataWidgetMapper 数据库绑定 QLineEdit控件"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="QDataWidgetMapper 数据库绑定 QLineEdit控件"></a></div><div class="recent-post-info"><a class="article-title" href="/article/1ed0f370.html" title="QDataWidgetMapper 数据库绑定 QLineEdit控件">QDataWidgetMapper 数据库绑定 QLineEdit控件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-10-29T08:17:59.000Z" title="发表于 2018-10-29 16:17:59">2018-10-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BE%8B%E5%AD%90/">例子</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/PyQt/">PyQt</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Model/">Model</a></span></div><div class="content">qt为操作数据库提供了一个model+view的模式 , 这样简单的出入库逻辑就不需要自己编写。 QDataWidgetMapper 可以 将数据库的数据 映射到其他控件 。 注意: 表格里的数据修改 还没有提交到数据库 , 需要点击提交按钮才生效。   https://github.com/PyQt5/PyQt/tree/master/Test/partner_625781186/16_sqlModel/01_mapper 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899#-*- coding: utf-8 -*-from PyQt5 import  QtWidgets, QtGui, QtCorefrom PyQt5.QtCore import...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/article/26350c05.html" title="PyQt5显示.9格式的PNG图片"><img class="post-bg" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyQt5显示.9格式的PNG图片"></a></div><div class="recent-post-info"><a class="article-title" href="/article/26350c05.html" title="PyQt5显示.9格式的PNG图片">PyQt5显示.9格式的PNG图片</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-10-26T02:00:08.000Z" title="发表于 2018-10-26 10:00:08">2018-10-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BE%8B%E5%AD%90/">例子</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/PyQt/">PyQt</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%9B%BE%E7%89%87/">图片</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%B0%94%E6%B3%A1/">气泡</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/9png/">.9png</a></span></div><div class="content">做过安卓开发的和使用过QQ的都知道.9.png这种图片格式，效果就如QQ的聊天气泡一样可以拉伸，这种格式的图片允许开发人员定义可扩展区域，当需要延伸图片以填充比图片本身更大区域时，可扩展区的内容被延展；允许开发人员定义内容显示区，用于显示文字或其他内容。目前在Github上有两个C++版本的，在这里我把它们都用Python实现了一遍。另外一个我也为PyQt提供了编译好的pyd文件。   C++版本在Github开源库中搜索到两个C++版本的  一个是 NinePatchQt 一个是 QtNinePatch  PyQt5版本这里也分为两个版本，都是基于上面的C++源码翻译改写过来的，具体的例子见项目里面的测试代码吧。  QtNinePatch是参考第一个源码编写，用法是在paintEvent中调用 QtNinePatch2是参考第二个源码编写，用法是pixmap = QtNinePatch.createPixmapFromNinePatchImage(self.image, self.width(),...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/6/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src= "/images/2.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">xing</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">59</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">55</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/veryXing"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/18647ffa.html" title="pytest-qt 测试模态窗体."><img src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pytest-qt 测试模态窗体."/></a><div class="content"><a class="title" href="/article/18647ffa.html" title="pytest-qt 测试模态窗体.">pytest-qt 测试模态窗体.</a><time datetime="2024-11-27T17:01:35.284Z" title="发表于 2024-11-28 01:01:35">2024-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/5a8a6c8d.html" title="post"><img src= "/images/2.gif" data-lazy-src="http://up.36992.com/pic/e6/c5/51/e6c551e768092c8655292d89a4034a74.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="post"/></a><div class="content"><a class="title" href="/article/5a8a6c8d.html" title="post">post</a><time datetime="2024-10-31T15:27:17.000Z" title="发表于 2024-10-31 23:27:17">2024-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/140ab620.html" title="某网站自动下载音乐mp3和歌词"><img src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="某网站自动下载音乐mp3和歌词"/></a><div class="content"><a class="title" href="/article/140ab620.html" title="某网站自动下载音乐mp3和歌词">某网站自动下载音乐mp3和歌词</a><time datetime="2024-10-31T12:15:16.000Z" title="发表于 2024-10-31 20:15:16">2024-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/32b656da.html" title="PyQt密码管理系统"><img src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyQt密码管理系统"/></a><div class="content"><a class="title" href="/article/32b656da.html" title="PyQt密码管理系统">PyQt密码管理系统</a><time datetime="2024-10-20T14:36:18.000Z" title="发表于 2024-10-20 22:36:18">2024-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/a0a0fd82.html" title="PyQt5实现桌面小宠物"><img src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyQt5实现桌面小宠物"/></a><div class="content"><a class="title" href="/article/a0a0fd82.html" title="PyQt5实现桌面小宠物">PyQt5实现桌面小宠物</a><time datetime="2024-10-20T14:28:05.000Z" title="发表于 2024-10-20 22:28:05">2024-10-20</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Demo/"><span class="card-category-list-name">Demo</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Docs%E6%96%87%E6%AA%94/"><span class="card-category-list-name">Docs文檔</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/PyQt/"><span class="card-category-list-name">PyQt</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BB%A3%E7%A0%81/"><span class="card-category-list-name">代码</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BE%8B%E5%AD%90/"><span class="card-category-list-name">例子</span><span class="card-category-list-count">14</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">教程</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">笔记</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%80%B2%E9%9A%8E%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">進階教程</span><span class="card-category-list-count">3</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Aplayer/" style="font-size: 1.1em; color: #999">Aplayer</a> <a href="/tags/%E6%97%A0%E8%BE%B9%E6%A1%86/" style="font-size: 1.1em; color: #999">无边框</a> <a href="/tags/PyQt5-PySide2/" style="font-size: 1.1em; color: #999">PyQt5 PySide2</a> <a href="/tags/%E6%8B%A6%E6%88%AAprint/" style="font-size: 1.1em; color: #999">拦截print</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 1.1em; color: #999">音乐</a> <a href="/tags/QWebView/" style="font-size: 1.2em; color: #999da3">QWebView</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.5em; color: #99a9bf">教程</a> <a href="/tags/debug/" style="font-size: 1.1em; color: #999">debug</a> <a href="/tags/butterfly/" style="font-size: 1.5em; color: #99a9bf">butterfly</a> <a href="/tags/%E4%BF%A1%E5%8F%B7/" style="font-size: 1.3em; color: #99a1ac">信号</a> <a href="/tags/%E7%BF%BB%E8%BD%AC/" style="font-size: 1.1em; color: #999">翻转</a> <a href="/tags/%E8%BE%B9%E6%A1%86/" style="font-size: 1.1em; color: #999">边框</a> <a href="/tags/Mac/" style="font-size: 1.1em; color: #999">Mac</a> <a href="/tags/python-%E7%8A%B6%E6%80%81%E6%9C%BA/" style="font-size: 1.1em; color: #999">python 状态机</a> <a href="/tags/%E7%89%B9%E6%95%88/" style="font-size: 1.2em; color: #999da3">特效</a> <a href="/tags/Github/" style="font-size: 1.1em; color: #999">Github</a> <a href="/tags/%E8%BD%AE%E6%92%AD/" style="font-size: 1.1em; color: #999">轮播</a> <a href="/tags/%E5%9C%86%E8%A7%92/" style="font-size: 1.1em; color: #999">圆角</a> <a href="/tags/%E6%BB%91%E5%8A%A8%E6%9D%A1/" style="font-size: 1.1em; color: #999">滑动条</a> <a href="/tags/%E4%B8%BB%E9%A1%8C/" style="font-size: 1.5em; color: #99a9bf">主題</a> <a href="/tags/virtualenvwrapper/" style="font-size: 1.1em; color: #999">virtualenvwrapper</a> <a href="/tags/QWebEngineView/" style="font-size: 1.1em; color: #999">QWebEngineView</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 1.4em; color: #99a5b6">动画</a> <a href="/tags/%E8%8F%9C%E5%8D%95/" style="font-size: 1.1em; color: #999">菜单</a> <a href="/tags/pyqt/" style="font-size: 1.1em; color: #999">pyqt</a> <a href="/tags/subprocess-Popen/" style="font-size: 1.1em; color: #999">subprocess.Popen</a> <a href="/tags/Hexo/" style="font-size: 1.5em; color: #99a9bf">Hexo</a> <a href="/tags/%E7%BA%BF%E7%A8%8B/" style="font-size: 1.2em; color: #999da3">线程</a> <a href="/tags/%E8%BF%9B%E7%A8%8B/" style="font-size: 1.1em; color: #999">进程</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 1.1em; color: #999">编辑器</a> <a href="/tags/M1/" style="font-size: 1.1em; color: #999">M1</a> <a href="/tags/pyqt-hook-key/" style="font-size: 1.1em; color: #999">pyqt hook key</a> <a href="/tags/%E6%B0%94%E6%B3%A1/" style="font-size: 1.1em; color: #999">气泡</a> <a href="/tags/Asyncio/" style="font-size: 1.1em; color: #999">Asyncio</a> <a href="/tags/HLS/" style="font-size: 1.1em; color: #999">HLS</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%B8%88/" style="font-size: 1.1em; color: #999">设计师</a> <a href="/tags/%E6%88%AA%E5%9B%BE/" style="font-size: 1.1em; color: #999">截图</a> <a href="/tags/%E9%98%B4%E5%BD%B1/" style="font-size: 1.2em; color: #999da3">阴影</a> <a href="/tags/Model/" style="font-size: 1.1em; color: #999">Model</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 1.2em; color: #999da3">图片</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/" title="查看更多"><i class="fas fa-angle-right"></i></a>
+    </div>
+    <ul class="card-archive-list">
+  
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/11/">
+          <span class="card-archive-list-date">十一月 2024</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/10/">
+          <span class="card-archive-list-date">十月 2024</span>
+          <span class="card-archive-list-count">7</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2023/10/">
+          <span class="card-archive-list-date">十月 2023</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2020/12/">
+          <span class="card-archive-list-date">十二月 2020</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2020/07/">
+          <span class="card-archive-list-date">七月 2020</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2020/06/">
+          <span class="card-archive-list-date">六月 2020</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2020/05/">
+          <span class="card-archive-list-date">五月 2020</span>
+          <span class="card-archive-list-count">6</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2020/01/">
+          <span class="card-archive-list-date">一月 2020</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">59</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-11-27T18:00:11.651Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By xing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PyQt学习心得 | Xing's Blog</title><meta name="author" content="xing"><meta name="copyright" content="xing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在学习PyQt的过程中由于资料的缺乏或者没有中文导致大多数人感叹资料太少，学习困难，又或者急于求进，赶鸭子上架的情况，此时有系统的学习方法很重要。每个人都需要有自己的学习方法，别人的学习方法并不一定适合自己但可以采纳一些。笔者在这里列举了一些当初自己自学的一些心得和方法，希望帮助大家建立一套自己的学习PyQt的方法，提高自身的学习能力。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyQt学习心得">
+<meta property="og:url" content="https://veryxing.github.io/article/a322de94.html">
+<meta property="og:site_name" content="Xing&#39;s Blog">
+<meta property="og:description" content="在学习PyQt的过程中由于资料的缺乏或者没有中文导致大多数人感叹资料太少，学习困难，又或者急于求进，赶鸭子上架的情况，此时有系统的学习方法很重要。每个人都需要有自己的学习方法，别人的学习方法并不一定适合自己但可以采纳一些。笔者在这里列举了一些当初自己自学的一些心得和方法，希望帮助大家建立一套自己的学习PyQt的方法，提高自身的学习能力。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png">
+<meta property="article:published_time" content="2019-08-26T01:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-27T17:02:49.832Z">
+<meta property="article:author" content="xing">
+<meta property="article:tag" content="PyQt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://veryxing.github.io/article/a322de94.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PyQt学习心得',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-28 01:02:49'
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Xing's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/images/2.gif" data-lazy-src="/img/butterfly-icon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">59</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">55</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-folder-open"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-folder-open"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Xing's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">PyQt学习心得</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-folder-open"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-folder-open"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">PyQt学习心得</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-26T01:00:00.000Z" title="发表于 2019-08-26 09:00:00">2019-08-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-27T17:02:49.832Z" title="更新于 2024-11-28 01:02:49">2024-11-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>在学习PyQt的过程中由于资料的缺乏或者没有中文导致大多数人感叹资料太少，学习困难，又或者急于求进，赶鸭子上架的情况，此时有系统的学习方法很重要。每个人都需要有自己的学习方法，别人的学习方法并不一定适合自己但可以采纳一些。笔者在这里列举了一些当初自己自学的一些心得和方法，希望帮助大家建立一套自己的学习PyQt的方法，提高自身的学习能力。</p>
+<span id="more"></span>
+
+<h2 id="Python基础"><a href="#Python基础" class="headerlink" title="Python基础"></a>Python基础</h2><p>在学习和使用PyQt之前需要熟练使用Python，经过对QQ群里经常提问的问题的分析，发现大部分人对Python中的基础知识掌握不牢固导致很多基础问题，如果要想更好的使用Python以及它的扩展必需要进行系统的学习。这里列举一下常用的知识点。</p>
+<ol>
+<li>类　　　　　　　 　<a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-class.html">参考资料</a></li>
+<li>类的继承</li>
+<li>类的多继承</li>
+<li>类方法重写　　　　 <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-extends-init.html">参考资料</a></li>
+<li>类中的super函数　　<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-func-super.html">参考资料</a></li>
+<li>函数调用&#x2F;参数类型</li>
+<li>对象调用(参考第1点)</li>
+</ol>
+<p>必须熟练掌握上面的知识点后入门PyQt才比较容易，如果初学者对上面的知识点还不是很了解，本文不适合继续往下阅读。</p>
+<h2 id="设计师"><a href="#设计师" class="headerlink" title="设计师"></a>设计师</h2><p>Qt 设计师除了方便快速设计一些简单的界面外，其实笔者觉得更大的作用在于帮助用户熟悉各类控件、属性、信号等</p>
+<ol>
+<li>这里建议初学者不要急于求成，打开设计师新建一个<code>Widget</code>的窗口，比如</li>
+</ol>
+<p><img src= "/images/2.gif" data-lazy-src="/images/studynotes/desiger_create.png" alt="desiger_create"></p>
+<ol start="2">
+<li>然后把左侧的所有控件挨个拖动到中间的窗口中，比如这里拖动一个<strong>Push Button</strong>按钮</li>
+</ol>
+<p><img src= "/images/2.gif" data-lazy-src="/images/studynotes/desiger_drag.png" alt="desiger_drag"></p>
+<ol start="3">
+<li>在设计师右下角的属性编辑器中列举了该控件的所有父类，意味着可以调用和重写父类的所有方法，建议初学者把这个属性编辑器的所有属性挨个调整看看效果，部分控件可能需要<strong>Ctrl+R</strong>预览界面才能看到，同时像<strong>QListWidget，QTreeWidget，QTableWidget</strong>等某些控件需要在控件上右键增加数据才可以</li>
+</ol>
+<p><img src= "/images/2.gif" data-lazy-src="/images/studynotes/desiger_property.png" alt="desiger_property"><br><img src= "/images/2.gif" data-lazy-src="/images/studynotes/desiger_property2.png" alt="desiger_property2"></p>
+<ol start="4">
+<li>两个控件之间简单的信号槽关联可以通过设计师快速的设置</li>
+</ol>
+<p><img src= "/images/2.gif" data-lazy-src="/images/studynotes/desiger_signal.png" alt="desiger_signal"><br><img src= "/images/2.gif" data-lazy-src="/images/studynotes/desiger_signal2.png" alt="desiger_signal2"></p>
+<ol start="5">
+<li>提高进阶的方法，当你需要手动写代码实现界面的时候，不妨把UI文件转出PY文件，看看是如何构造的（这里涉及到布局等知识见后文）</li>
+</ol>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>Qt界面提供了方便的4种基本布局，<strong>QVboxLayout，QHboxLayout，QFormLayout，QGridLayout</strong>，初学者需要数量掌握这4种布局外加2种拉伸器（占位挤压）</p>
+<p>首先需要知道Qt界面的中控件的层级顺序以及parent，parent的作用既作为子控件的父元素也可以自动管理Qt的对象（具体可以搜索下关于 Qt parent的资料）</p>
+<ol>
+<li>在没有布局的情况下，在设计师中拖动摆放的控件是一层一层的叠加覆盖，此时每个添加的子控件的parent都是最外层的控件</li>
+</ol>
+<p><img src= "/images/2.gif" data-lazy-src="/images/studynotes/desiger_stack.png" alt="desiger_stack"></p>
+<ol start="2">
+<li>如果需要界面中的控件自动适应高度宽度，此时则需要使用4种布局来包裹里面的子控件，注意的是：布局不是控件不能设置高度宽度和样式等，是一个抽象的东西，就好比是一根橡皮筋包裹几个矩形的物品；布局也可以设置一些属性（在设计师属性编辑器中），比如设置两者直接的间距，设置距离上下左右的间距，设置比例等</li>
+</ol>
+<p><img src= "/images/2.gif" data-lazy-src="/images/studynotes/desiger_layout.png" alt="desiger_layout"></p>
+<ol start="3">
+<li>在没有布局或者有布局的时候。可以添加容器控件（<strong>QWidget，QFrame，QGroupBox，QScrollArea，QToolBox，QTabWidget，QStackedWidget，QMidArea，QDockWidget</strong>）这些容器可以放置子控件，从而循环嵌套。</li>
+</ol>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>在PyQt5.5的时候自带了一个例子文件夹（后面的版本没有的话可以下载PyQt5源码，里面有个examples文件夹），想要熟练的掌握PyQt还需要从自带的例子中学习，必须要每个例子都运行一次然后看看这个例子实现了什么，这样才能记忆深刻。<br>同时很多开发者在<a target="_blank" rel="noopener" href="https://github.com/PyQt5/PyQt">https://github.com/PyQt5/PyQt</a>分享了各类进阶例子，同时也欢迎大家共同完善该项目，提供更多更好的例子。另外也可以下载该项目的客户端<a target="_blank" rel="noopener" href="https://github.com/PyQt5/PyQtClient/releases">PyQtClient</a>软件，支持运行其中的例子</p>
+<p>建议在更深入的学习PyQt之前多看看一些例子。</p>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p>接下来要说的就是Qt的api文档，<a target="_blank" rel="noopener" href="https://doc.qt.io/qt-5/classes.html">官网文档</a>，这里其实不要害怕是英文就不想看，觉得看不懂了，其实官网的文档还是比较简洁的，而且函数名也比较直观就能知道意思。也可以用谷歌浏览器打开右键翻译，基本上都能看懂。笔者前期写过一篇<a href="/viewapi.html">如何查阅Qt文档</a>的文档可以阅读学习一番。</p>
+<p>这里就拿<a target="_blank" rel="noopener" href="https://doc.qt.io/qt-5/qwebengineview.html">QWebEngineView</a>举一个例子，首先初学者在使用这个浏览器控件时候，会有诸多的问题比如：Cookie，拦截器等就不知道如何去调用函数来设置</p>
+<ol>
+<li>首先打开官网文档 <a target="_blank" rel="noopener" href="https://doc.qt.io/qt-5/qwebengineview.html">https://doc.qt.io/qt-5/qwebengineview.html</a>，可以看到只有少量的函数可以调用，寻找一番并没有发现和Cookie相关的东西，这个时候就需要把重点放在有特俗返回值的函数上，比如：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">QWebEngineHistory *	          <span class="title">history</span><span class="params">()</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">QWebEnginePage *	          <span class="title">page</span><span class="params">()</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">QWebEngineSettings *	      <span class="title">settings</span><span class="params">()</span> <span class="type">const</span></span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>这三个函数返回了一个类实例，就意味着可以调用其中的方法。</p>
+<ol start="2">
+<li><p>点击<strong>page()<strong>打开 <a target="_blank" rel="noopener" href="https://doc.qt.io/qt-5/qwebenginepage.html">https://doc.qt.io/qt-5/qwebenginepage.html</a>，发现没有cookie相关的东西，只有</strong>QWebEngineProfile *	profile() const</strong>这个函数比较可疑。</p>
+</li>
+<li><p>点击**profile()<strong>打开 <a target="_blank" rel="noopener" href="https://doc.qt.io/qt-5/qwebengineprofile.html">https://doc.qt.io/qt-5/qwebengineprofile.html</a>，在浏览器中搜索<code>cookie</code>发现这个类中包含大量和cookie相关的东西，比如：</strong>QWebEngineCookieStore *	cookieStore()&#96;**从名字上可以猜测大概意思为cookie储存</p>
+</li>
+<li><p>点击**cookieStore()**打开 <a target="_blank" rel="noopener" href="https://doc.qt.io/qt-5/qwebenginecookiestore.html">https://doc.qt.io/qt-5/qwebenginecookiestore.html</a>，此时就会发现这个类里面包含了删除和设置cookie的方法。</p>
+</li>
+<li><p>但是找到了这些方法后，面对初学者又一个问题来了，该如何去用？根据上面4点整理一下，把他们当做简单的Python对象，方法和操作方法和class一样的。</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">self</span>.webview = QWebEngineView()</span><br><span class="line"><span class="comment"># 得到page</span></span><br><span class="line">page = <span class="variable language_">self</span>.webview.page()</span><br><span class="line"><span class="comment"># 得到profile</span></span><br><span class="line">profile = page.profile()</span><br><span class="line"><span class="comment"># 得到cookieStore</span></span><br><span class="line">cookieStore = profile.cookieStore()</span><br><span class="line"><span class="comment"># 清空cookie</span></span><br><span class="line">cookieStore.deleteAllCookies()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用简短代码来表达就是</span></span><br><span class="line">cookieStore = <span class="variable language_">self</span>.webview.page().profile().cookieStore()</span><br><span class="line">cookieStore.deleteAllCookies()</span><br></pre></td></tr></table></figure>
+
+<h2 id="异常调试"><a href="#异常调试" class="headerlink" title="异常调试"></a>异常调试</h2><p>可能有时候由于粗心，或者调用了一些非法函数，参数错误等会导致程序出现一些异常，首先第一步复制最后一行的错误去百度或者谷歌搜索，大多时候能找到问题所在。其次如果搜索不到或者自己的异常可能是由于某个变量的值不对引起的，就需要在编辑器中打断点使用DEBUG模式调试变量值（如果不会可以采用麻烦一点的办法：用<code>print</code>打印出变量值）</p>
+<p>遇到问题后首先需要自己多调试排查问题，不要一遇到问题就去问，自己多尝试一个一个排查直到找到问题所在并解决，这也是一种提高自身能力的地方。</p>
+<h2 id="检索资料"><a href="#检索资料" class="headerlink" title="检索资料"></a>检索资料</h2><p>作为一个开发人员确实需要具备查阅文档、查询资料等基础技能，会为自己的开发带来很大的帮助，要善于搜索，通过不同的方式去搜索才能找到自己需要的东西。信息检索是每个程序猿必备的能力之一，其好处在于可以更快更准确的在茫茫网络海洋中找到自己所需要的东西，这个过程需要长期不断积累和练习。</p>
+<ol>
+<li>中文搜索引擎：采用多个关键词 以空格分开搜索，如：PyQt 拖拽</li>
+<li>英文搜索引擎：采用多个关键词 以空格分开搜索，如：PyQt Drag Drop</li>
+</ol>
+<h2 id="片尾"><a href="#片尾" class="headerlink" title="片尾"></a>片尾</h2><p>好了，笔者基本上的学习过程就整理如上，这并不是说每个人都适合这样的方法，但至少笔者是这样一步一步走过来的。当你养成了一个学习、发现和解决问题的好习惯时就会慢慢得心应手。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://veryXing.github.io">xing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://veryxing.github.io/article/a322de94.html">https://veryxing.github.io/article/a322de94.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://veryXing.github.io" target="_blank">Xing's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/PyQt/">PyQt</a></div><div class="post-share"><div class="social-share" data-image="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="prev-post pull-left" href="/article/d7083d08.html" title="修改pyuic代替pyside2-uic."><img class="cover" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">修改pyuic代替pyside2-uic.</div></div></a><a class="next-post pull-right" href="/article/bb55f976.html" title="python 状态机模块 　"><img class="cover" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">python 状态机模块 　</div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a href="/article/2241662d.html" title="PyQt5窗口跟随其它窗口"><img class="cover" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-3.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-10-23</div><div class="title">PyQt5窗口跟随其它窗口</div></div></a><a href="/article/32b656da.html" title="PyQt密码管理系统"><img class="cover" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-20</div><div class="title">PyQt密码管理系统</div></div></a><a href="/article/f305b1cc.html" title="PyQt属性动画(QPropertyAnimation)"><img class="cover" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-05-08</div><div class="title">PyQt属性动画(QPropertyAnimation)</div></div></a><a href="/article/bf8fd827.html" title="QSS (Qt Style Sheet) 样式设定"><img class="cover" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-14</div><div class="title">QSS (Qt Style Sheet) 样式设定</div></div></a><a href="/article/5a4e93df.html" title="PyQt5动画边框阴影"><img class="cover" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-09-25</div><div class="title">PyQt5动画边框阴影</div></div></a><a href="/article/3217c859.html" title="三种方式绑定信号槽"><img class="cover" src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-10.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-05-04</div><div class="title">三种方式绑定信号槽</div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src= "/images/2.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">xing</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">59</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">55</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/veryXing"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">Python基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%B8%88"><span class="toc-number">2.</span> <span class="toc-text">设计师</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B1%80"><span class="toc-number">3.</span> <span class="toc-text">布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-number">4.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3"><span class="toc-number">5.</span> <span class="toc-text">文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E8%B0%83%E8%AF%95"><span class="toc-number">6.</span> <span class="toc-text">异常调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E7%B4%A2%E8%B5%84%E6%96%99"><span class="toc-number">7.</span> <span class="toc-text">检索资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%87%E5%B0%BE"><span class="toc-number">8.</span> <span class="toc-text">片尾</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/18647ffa.html" title="pytest-qt 测试模态窗体."><img src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pytest-qt 测试模态窗体."/></a><div class="content"><a class="title" href="/article/18647ffa.html" title="pytest-qt 测试模态窗体.">pytest-qt 测试模态窗体.</a><time datetime="2024-11-27T17:01:35.284Z" title="发表于 2024-11-28 01:01:35">2024-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/5a8a6c8d.html" title="post"><img src= "/images/2.gif" data-lazy-src="http://up.36992.com/pic/e6/c5/51/e6c551e768092c8655292d89a4034a74.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="post"/></a><div class="content"><a class="title" href="/article/5a8a6c8d.html" title="post">post</a><time datetime="2024-10-31T15:27:17.000Z" title="发表于 2024-10-31 23:27:17">2024-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/140ab620.html" title="某网站自动下载音乐mp3和歌词"><img src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="某网站自动下载音乐mp3和歌词"/></a><div class="content"><a class="title" href="/article/140ab620.html" title="某网站自动下载音乐mp3和歌词">某网站自动下载音乐mp3和歌词</a><time datetime="2024-10-31T12:15:16.000Z" title="发表于 2024-10-31 20:15:16">2024-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/32b656da.html" title="PyQt密码管理系统"><img src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyQt密码管理系统"/></a><div class="content"><a class="title" href="/article/32b656da.html" title="PyQt密码管理系统">PyQt密码管理系统</a><time datetime="2024-10-20T14:36:18.000Z" title="发表于 2024-10-20 22:36:18">2024-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/a0a0fd82.html" title="PyQt5实现桌面小宠物"><img src= "/images/2.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/material-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyQt5实现桌面小宠物"/></a><div class="content"><a class="title" href="/article/a0a0fd82.html" title="PyQt5实现桌面小宠物">PyQt5实现桌面小宠物</a><time datetime="2024-10-20T14:28:05.000Z" title="发表于 2024-10-20 22:28:05">2024-10-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By xing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
